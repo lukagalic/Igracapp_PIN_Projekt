@@ -1,0 +1,45 @@
+﻿@model Igracapp.Models.Opsirnije
+
+@{
+    ViewData["Title"] = "Brisanje profila";
+}
+
+<h1>Brisanje profila</h1>
+
+<h3>Da li ste sigurni a želite izbrisat profil?</h3>
+<div>
+    <h4>Opsirnije</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pozicija)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pozicija)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Visina)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Visina)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Noga)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Noga)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Vrijednost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Vrijednost)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

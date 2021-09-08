@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Igracapp.Models.Opsirnije>
+
+@{
+    ViewData["Title"] = "Profil";
+}
+
+<h1>Profil</h1>
+
+<p>
+    <a asp-action="Create">Izradi novi Profil</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pozicija)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vrijednost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pozicija)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vrijednost)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

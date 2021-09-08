@@ -1,0 +1,52 @@
+﻿@model Igracapp.Models.Igrac
+
+@{
+    ViewData["Title"] = "Kreiranje profila";
+}
+
+<h1>Kreiranje profila</h1>
+
+<h4>Igrac</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ImePrezime" class="control-label"></label>
+                <input asp-for="ImePrezime" class="form-control" />
+                <span asp-validation-for="ImePrezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Klub" class="control-label"></label>
+                <input asp-for="Klub" class="form-control" />
+                <span asp-validation-for="Klub" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatRod" class="control-label"></label>
+                <input asp-for="DatRod" class="form-control" />
+                <span asp-validation-for="DatRod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nacionalnost" class="control-label"></label>
+                <input asp-for="Nacionalnost" class="form-control" />
+                <span asp-validation-for="Nacionalnost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpsirnijeId" class="control-label"></label>
+                <select asp-for="OpsirnijeId" class ="form-control" asp-items="ViewBag.OpsirnijeId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
